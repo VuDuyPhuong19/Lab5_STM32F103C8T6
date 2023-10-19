@@ -1,0 +1,118 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Vu Duy Phuong, HUST, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.1.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\Project STM32F103C8T6\newLAB\Lab5.uvprojx
+Project File Date:  10/17/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Lab5'
+main.c(2): warning: In file included from...
+./SysTick.h(5): warning: // comments are not allowed in this language [-Wcomment]
+// Initialize SysTick with busy wait ruuning at bus clock
+^
+main.c(3): warning: In file included from...
+./PLL.h(2): warning: no newline at end of file [-Wnewline-eof]
+void PLL_Init(void);
+                    ^
+main.c(4): warning: In file included from...
+C:/Users/Vu Duy Phuong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+C:/Users/Vu Duy Phuong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+C:/Users/Vu Duy Phuong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *           - Macros to access peripheral<92>s registers hardware
+                                           ^
+main.c(29): warning: // comments are not allowed in this language [-Wcomment]
+        {0x101, 0x2000, 200, {goS,waitS,goS,waitS,waitS,waitS,waitS,waitS}},                                                                                                                    // goS
+                                                                                                                                                                                                ^
+main.c(28): warning: no previous extern declaration for non-static variable 'FSM' [-Wmissing-variable-declarations]
+State_t FSM[14] = {
+        ^
+main.c(28): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+State_t FSM[14] = {
+^
+main.c(58): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIOB->CRH &= ~(0x0000000F);
+                   ~~ ^~~~~~~~~~~~~
+main.c(48): warning: no previous prototype for function 'GPIO_Config' [-Wmissing-prototypes]
+void GPIO_Config(void){
+     ^
+main.c(48): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void GPIO_Config(void){
+^
+static 
+main.c(79): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOB->ODR = (GPIOB->ODR & ~(0x1E3)) | FSM[S].out_traffic;
+                                         ~ ^~~~~~~~
+main.c(82): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                GPIOC->ODR = (GPIOC->ODR & ~(0x6000)) | FSM[S].out_walk;
+                                         ~ ^~~~~~~~~
+main.c(94): warning: no newline at end of file [-Wnewline-eof]
+}       
+        ^
+main.c(73): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        uint32_t S;
+                 ^
+13 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=1308 RO-data=868 RW-data=0 ZI-data=1632  
+FromELF: creating hex file...
+".\Objects\LAB1.axf" - 0 Error(s), 13 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil.STM32F1xx_DFP.2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Lab5
+  C:/Users/Vu Duy Phuong/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/Vu Duy Phuong/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/system_stm32f10x.c
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
